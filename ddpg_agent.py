@@ -9,11 +9,11 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 
-BUFFER_SIZE         = int(5e5)  # replay buffer size
+BUFFER_SIZE         = int(1e6)  # replay buffer size
 BATCH_SIZE          = 1024      # minibatch size
 GAMMA               = 0.99      # discount factor
 TAU                 = 1e-3      # for soft update of target parameters
-LR_ACTOR            = 7e-4      # learning rate of the actor
+LR_ACTOR            = 5e-4      # learning rate of the actor
 LR_CRITIC           = 1e-3      # learning rate of the critic
 eps_max             = 1.0
 eps_min             = 0.1
@@ -56,6 +56,10 @@ class Agent():
 
         # Replay memory
         self.memory = ReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, random_seed)
+
+        # Make sure target is with the same weight as the source
+        #self.hard_update(self.actor_target, self.actor_local)
+        #self.hard_update(self.critic_target, self.critic_local)
 
         self.timstep = 0
 
