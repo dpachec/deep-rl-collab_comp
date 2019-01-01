@@ -12,7 +12,7 @@ The task is episodic, and in order to solve the environment, our agent must get 
 
 The project requires Python 3.6 or higher with the libraries unityagents, numpy, PyTorch.
 
-You will also need the Unity Reacher environment V02, which can be downloaded [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/.../Reacher.app.zip).
+You will also need the Unity Tennis environment, which can be downloaded [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip).
 
 
 # Installation
